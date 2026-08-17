@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Tipo de Evaluación - ErgonometApp</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 600px) {
+            .options { grid-template-columns: 1fr; }
+        }
+        .option-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #333;
+            background: #f9f9f9;
+        }
+        .option-card:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+        .option-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .option-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .option-desc {
+            font-size: 14px;
+            color: #666;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #999;
+            font-size: 14px;
+        }
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 18px;
+        }
+        .nav-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            background: #f0f4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">🏢 ErgonometApp</div>
+            <a href="/logout" class="nav-link">Salir</a>
+        </div>
+
+        <h1>¿Qué tipo de evaluación deseas realizar?</h1>
+        <p class="subtitle">Elige la metodología que se adapte a tu necesidad</p>
+
+        <div class="options">
+            <a href="/nueva-evaluacion?tipo=ley_silla" class="option-card">
+                <div class="option-icon">🪑</div>
+                <div class="option-title">Ley Silla</div>
+                <div class="option-desc">Evaluación ergonómica de puestos de trabajo sedentario</div>
+            </a>
+
+            <a href="/nueva-evaluacion?tipo=nom_036" class="option-card">
+                <div class="option-icon">📋</div>
+                <div class="option-title">NOM-036</div>
+                <div class="option-desc">Evaluación de levantamiento de cargas</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>ErgonometApp v5.1 - Sistema de Evaluación Ergonómica RFranyutti</p>
+        </div>
+    </div>
+</body>
+</html>
